@@ -1,45 +1,69 @@
 ---
 const cardsData = [
   {title: 'UI/Web & Graph design for teenagers 11-17 years old', time: '04.11.2022'},
+  {title: 'UI/Web & Graph design for teenagers 11-17 years old', time: '04.11.2022'},
 ];
 ---
 
-{cardsData.map(cards => (
-  <div class="center">
-    <div class="article-card" style="background-image: url('src\icons\blob-scene-haikei.svg');">
-      <div class="content">
-        <p class="date">{cards.title}</p>
-        <p class="title">{cards.time}</p>
+<section>
+  <div class="flex-container">
+    {cardsData.map(cards => (
+      <div class="center">
+        <div class="article-card astro-card" style="background-image: url('src\icons\blob-scene-haikei.svg');">
+          <div class="content">
+            <p class="date">{cards.title}</p>
+            <p class="title">{cards.time}</p>
+          </div>
+          <img src="https://images.unsplash.com/photo-1482877346909-048fb6477632?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=958&q=80" alt="article-cover" />
+        </div>
       </div>
-      <img src="https://images.unsplash.com/photo-1482877346909-048fb6477632?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=958&q=80" alt="article-cover" />
-    </div>
+    ))}
   </div>
-))}
+
+  <div class="flex-container" style="margin-top: 200px;">
+    {cardsData.map(cards => (
+      <div class="center">
+        <div class="article-card astro-card" style="background-image: url('src\icons\blob-scene-haikei.svg');">
+          <div class="content">
+            <p class="date">{cards.title}</p>
+            <p class="title">{cards.time}</p>
+          </div>
+          <img src="https://images.unsplash.com/photo-1482877346909-048fb6477632?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=958&q=80" alt="article-cover" />
+        </div>
+      </div>
+    ))}
+  </div>
+</section>
 
 <style>
+  .flex-container {
+    display: flex;
+    flex-wrap: nowrap;
+    background-color: DodgerBlue;
+    position: relative;
+  }
+
   .center {
     transform: scale(1.5);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-top: 50px;
   }
 
   .article-card {
     width: 350px;
-    height: 100px;
+    height: 250px;
     border-radius: 12px;
     overflow: hidden;
-    position: relative;
     font-family: Arial, Helvetica, sans-serif;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
-    transition: all 300ms;
+    transition: all 200ms;
+  }
 
-    position: relative;
-    width: 300px;
-    height: 400px;
-    background-size: cover;
-    z-index: 1;
+  .flex-container > div {
+    margin-left: 200px;
+    margin-right: 200px;
+    text-align: center;
   }
 
   .article-card:hover {
@@ -61,11 +85,10 @@ const cardsData = [
     height: auto;
     bottom: 0;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
-  }
 
-  .article-card .date,
-  .article-card .title {
-    margin: 0;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
   }
 
   .article-card .date {

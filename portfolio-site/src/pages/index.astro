@@ -1,17 +1,23 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Header from '../components/header.astro';
-import Card from '../components/Card.astro';
+import Cards from '../components/Card.astro';
 import Socials from '../components/Socials.astro';
 
 import { Icon } from "astro-icon";
 ---
 
 <Layout title="Portfolio">
+
 	<Header title="Portfolio"/>
 
 	<section>
-		<Card title="Title" body="Body"/>
+
+		<div id="projects">
+			<h1>Projects</h1>
+		</div>
+
+		<Cards class="over"/>
 
 		<Icon name="blob-scene-haikei" class="spacer1 layer1"/>
 		<a href="/test"><button>Test Page</button></a>
@@ -31,16 +37,22 @@ import { Icon } from "astro-icon";
 		max-width: 60ch;
 	}
 
+	.over {
+		z-index: 2;
+		padding-bottom: -50px;
+	}
+
 	.spacer1 {
 		aspect-ratio: 960/600;
 		width: 100%;
 		background-repeat: no-repeat;
 		background-position: center;
 		background-size: cover;
+		z-index: 0;
 	}
 
 	.layer1 {
-  			background-image: url('layered-waves-haikei.svg');
+  		background-image: url('layered-waves-haikei.svg');
 	}
 
 	.instructions {
@@ -77,6 +89,15 @@ import { Icon } from "astro-icon";
 		text-align: center;
 		font-family: "Montserrat", sans-serif;
 		font-size: 30px;
+	}
+
+	#projects {
+		margin: auto;
+		text-align: center;
+		font-family: "Montserrat", sans-serif;
+		font-size: 40px;
+		margin-bottom: 100px;
+		letter-spacing: 1cm;
 	}
 
 	.heh {
