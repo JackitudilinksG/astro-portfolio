@@ -1,0 +1,88 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Header from '../components/header.astro';
+import Card from '../components/Card.astro';
+import Socials from '../components/Socials.astro';
+
+import { Icon } from "astro-icon";
+---
+
+<Layout title="Portfolio">
+	<Header title="Portfolio"/>
+
+	<section>
+		<Card title="Title" body="Body"/>
+
+		<Icon name="blob-scene-haikei" class="spacer1 layer1"/>
+		<a href="/test"><button>Test Page</button></a>
+	</section>
+
+	<section id="skills">
+
+	</section>
+
+	<Socials/>
+</Layout>
+
+<style>
+	main {
+		margin: auto;
+		padding: 1.5rem;
+		max-width: 60ch;
+	}
+
+	.spacer1 {
+		aspect-ratio: 960/600;
+		width: 100%;
+		background-repeat: no-repeat;
+		background-position: center;
+		background-size: cover;
+	}
+
+	.layer1 {
+  			background-image: url('layered-waves-haikei.svg');
+	}
+
+	.instructions {
+		line-height: 1.6;
+		margin: 1rem 0;
+		border: 1px solid rgba(var(--accent), 25%);
+		background-color: white;
+		padding: 1rem;
+		border-radius: 0.4rem;
+	}
+
+	.instructions code {
+		font-size: 0.875em;
+		font-weight: bold;
+		background: rgba(var(--accent), 12%);
+		color: rgb(var(--accent));
+		border-radius: 4px;
+		padding: 0.3em 0.45em;
+	}
+
+	.instructions strong {
+		color: rgb(var(--accent));
+	}
+
+	.link-card-grid {
+		display: grid;
+		grid-template-columns: repeat(auto-fit, minmax(24ch, 1fr));
+		gap: 1rem;
+		padding: 0;
+	}
+
+	#socials {
+		margin: auto;
+		text-align: center;
+		font-family: "Montserrat", sans-serif;
+		font-size: 30px;
+	}
+
+	.heh {
+		background-color: #24252A;
+		background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1600 900'%3E%3Cpolygon fill='%23701d4e' points='957 450 539 900 1396 900'/%3E%3Cpolygon fill='%23f341a9' points='957 450 872.9 900 1396 900'/%3E%3Cpolygon fill='%237e185d' points='-60 900 398 662 816 900'/%3E%3Cpolygon fill='%23de34a3' points='337 900 398 662 816 900'/%3E%3Cpolygon fill='%238b126d' points='1203 546 1552 900 876 900'/%3E%3Cpolygon fill='%23c9289d' points='1203 546 1552 900 1162 900'/%3E%3Cpolygon fill='%23970980' points='641 695 886 900 367 900'/%3E%3Cpolygon fill='%23b31c96' points='587 900 641 695 886 900'/%3E%3Cpolygon fill='%23a20294' points='1710 900 1401 632 1096 900'/%3E%3Cpolygon fill='%239e0e8f' points='1710 900 1401 632 1365 900'/%3E%3Cpolygon fill='%23aa00aa' points='1210 900 971 687 725 900'/%3E%3Cpolygon fill='%23880088' points='943 900 1210 900 971 687'/%3E%3C/svg%3E");
+		background-attachment: fixed;
+		background-size: cover;
+	}
+</style>

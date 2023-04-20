@@ -1,0 +1,17 @@
+---
+const cardsData = [
+  {title: 'UI/Web & Graph design for teenagers 11-17 years old', time: '04.11.2022'},
+];
+---
+
+{cardsData.map(cards => (
+  <div class="center">
+    <div class="article-card" style="background-image: url('src\icons\blob-scene-haikei.svg');">
+      <div class="content">
+        <p class="date">{cards.title}</p>
+        <p class="title">{cards.time}</p>
+      </div>
+      <img src="https://images.unsplash.com/photo-1482877346909-048fb6477632?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=958&q=80" alt="article-cover" />
+    </div>
+  </div>
+))}

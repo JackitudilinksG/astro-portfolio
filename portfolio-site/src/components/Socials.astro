@@ -1,0 +1,28 @@
+---
+const socialsData = [
+    {site: 'Instagram', link: 'https://www.instagram.com/dericjojo10/', username: '@dericjojo10'},
+    {site: 'Linkedin', link: 'https://www.linkedin.com/in/deric-jojo-0594a7271/', username: 'Deric Jojo'},
+    {site: 'Twitter', link: 'https://twitter.com/dudeofinterest', username: 'Deric Jojo'},
+    {site: 'Pinterest', link: 'https://www.pinterest.com/jackitudilinks/', username: 'dunno'},
+    {site: 'GitHub', link: 'https://github.com/JackitudilinksG', username: 'JackitudilinksG'},
+    {site: 'Discord', link: 'https://discord.com', username: 'Gray_Scale_Sunshine#7923'}
+];
+---
+
+<section id="socials">	
+    <p style="font-weight: 900; font-size: 70px; padding-bottom: 40px;">CONTACT ME</p>
+
+    {socialsData.map(socials => (
+        <p>{socials.site} - <a href={socials.link} target="_blank">{socials.username}</a></p>
+        <br>
+    ))}
+</section>
+
+<style>
+    #socials {
+		margin: auto;
+		text-align: center;
+		font-family: "Montserrat", sans-serif;
+		font-size: 30px;
+	}
+</style>

@@ -1,0 +1,28 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:500');
+
+*, *:before, *:after {                                   /*idk why this removes the gap between sections*/
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    background-color: #24252a;
+    color: #DFDFDF;
+    font-family: system-ui, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+head {
+    color: #EFF9F0;
+    text-align: center;
+}
+
+section {
+    height: 100vh;
+}
+
+a {
+    text-decoration: none;
+}
+/*how to i put text over an SVG?*/
