@@ -1,7 +1,7 @@
 ---
 const cardsData = [
-  {title: 'UI/Web & Graph design for teenagers 11-17 years old', time: '04.11.2022'},
-  {title: 'UI/Web & Graph design for teenagers 11-17 years old', time: '04.11.2022'},
+  {title: 'UI/Web & Graph design for teenagers 11-17 years old', time: '04.11.2022', image: '/images/picnic.jpg'},
+  {title: 'UI/Web & Graph design for teenagers 11-17 years old', time: '04.11.2022', image: '/images/sign.jpg'},
 ];
 ---
 
@@ -9,12 +9,12 @@ const cardsData = [
   <div class="flex-container">
     {cardsData.map(cards => (
       <div class="center">
-        <div class="article-card astro-card" style="background-image: url('src\icons\blob-scene-haikei.svg');">
+        <div class="article-card astro-card">
           <div class="content">
             <p class="date">{cards.title}</p>
             <p class="title">{cards.time}</p>
           </div>
-          <img src="https://images.unsplash.com/photo-1482877346909-048fb6477632?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=958&q=80" alt="article-cover" />
+          <img src={cards.image} alt="article-cover"/>
         </div>
       </div>
     ))}
@@ -23,24 +23,25 @@ const cardsData = [
   <div class="flex-container" style="margin-top: 200px;">
     {cardsData.map(cards => (
       <div class="center">
-        <div class="article-card astro-card" style="background-image: url('src\icons\blob-scene-haikei.svg');">
+        <div class="article-card astro-card">
           <div class="content">
             <p class="date">{cards.title}</p>
             <p class="title">{cards.time}</p>
           </div>
-          <img src="https://images.unsplash.com/photo-1482877346909-048fb6477632?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=958&q=80" alt="article-cover" />
+          <img src={cards.image} alt="article-cover" />
         </div>
       </div>
     ))}
   </div>
 </section>
 
+
 <style>
   .flex-container {
     display: flex;
-    flex-wrap: nowrap;
-    background-color: DodgerBlue;
+    flex-wrap: nowrap;  
     position: relative;
+    z-index: 2;
   }
 
   .center {
