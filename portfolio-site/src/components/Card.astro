@@ -1,54 +1,36 @@
 ---
-const cardsData = [
-  {title: 'UI/Web & Graph design for teenagers 11-17 years old', time: '04.11.2022', image: '/images/picnic.jpg'},
-  {title: 'UI/Web & Graph design for teenagers 11-17 years old', time: '04.11.2022', image: '/images/sign.jpg'},
-];
+export interface Props {
+  href?: string;
+	title?: string;
+	time?: string;
+	image?: string;
+}
+
+const {href, title, time, image} = Astro.props;
 ---
 
-<section>
-  <div class="flex-container">
-    {cardsData.map(cards => (
-      <div class="center">
-        <div class="article-card astro-card">
-          <div class="content">
-            <p class="date">{cards.title}</p>
-            <p class="title">{cards.time}</p>
-          </div>
-          <img src={cards.image} alt="article-cover"/>
+<div class="flex-container">
+    <a href={href}>
+      <div class="article-card astro-card">
+        <div class="content">
+          <p class="date">{title}</p>
+          <p class="title">{time}</p>
         </div>
+        <img src={image} alt="article-cover"/>
       </div>
-    ))}
-  </div>
-
-  <div class="flex-container" style="margin-top: 200px;">
-    {cardsData.map(cards => (
-      <div class="center">
-        <div class="article-card astro-card">
-          <div class="content">
-            <p class="date">{cards.title}</p>
-            <p class="title">{cards.time}</p>
-          </div>
-          <img src={cards.image} alt="article-cover" />
-        </div>
-      </div>
-    ))}
-  </div>
-</section>
+    </a>
+</div>
 
 
 <style>
   .flex-container {
-    display: flex;
-    flex-wrap: nowrap;  
-    position: relative;
-    z-index: 2;
-  }
+    list-style: none;
 
-  .center {
+    margin-bottom: 10%;
+
     transform: scale(1.5);
-    display: flex;
-    align-items: center;
     justify-content: center;
+    margin-right  : 50px;
   }
 
   .article-card {
@@ -62,8 +44,6 @@ const cardsData = [
   }
 
   .flex-container > div {
-    margin-left: 200px;
-    margin-right: 200px;
     text-align: center;
   }
 
@@ -82,9 +62,7 @@ const cardsData = [
     box-sizing: border-box;
     width: 100%;
     position: absolute;
-    padding: 30px 20px 20px 20px;
     height: auto;
-    bottom: 0;
     background: linear-gradient(transparent, rgba(0, 0, 0, 0.6));
 
     top: 50%;
